@@ -14,6 +14,6 @@ module.exports = [{
         cuisines: 'Coffee, Bakery',
         pic: {
             image: '/images/cafe.jpg',
-            credit: 'Phot by Petr Sevcovic on Unsplash'
+            credit: 'Photo by Petr Sevcovic on Unsplash'
         }
     }]

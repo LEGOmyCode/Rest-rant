@@ -10,7 +10,7 @@ function edit_form(data){
                 <form method="POST" action={`/places/${data.id}?_method=PUT`}>
                 <div className="form-group">
                     <label htmlFor="name">Place Name</label>
-                    <input className="form-control" id="name" name="name" value={data.places.name} required />
+                    <input className="form-control" id="name" name="name" value={data.place.name} required />
                 </div>
                  <div className="form-group">
                     <label htmlFor="cuisines">Cuisines</label>
