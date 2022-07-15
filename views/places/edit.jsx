@@ -6,7 +6,7 @@ function edit_form(data){
     return(
         <Def>
             <main>
-                <h1> Add A New Place</h1>
+                <h1> Edit Form</h1>
                 <form method="POST" action={`/places/${data.id}?_method=PUT`}>
                 <div className="form-group">
                     <label htmlFor="name">Place Name</label>
