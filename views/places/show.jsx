@@ -3,10 +3,20 @@ const Def = require('../default')
 
 
 function show(data){
+    let message = ' '
+    if (data.message){
+        message = (
+            <h4 className= "alert-danger">{data.message}</h4>
+        )
+    }
     return(
         <Def>
             <main>
                 <h1>{data.place.name}</h1>
+                {message}
+                <h3>located in {data.place.city}, {data.place.state}</h3>
+                <h3>{data.place.showEstablished()}</h3>
+                <h4>Serving {data.place.cuisines}</h4>
                 <h2>Currently Unrated</h2>
                 <h2>No comments yet!</h2>
                 <a href={`/places/${data.id}/edit`} className="btn btn-warning">
