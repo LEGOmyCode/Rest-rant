@@ -12,7 +12,7 @@ async function seed(){
         content:"Amazing"
     })
     //Add that comment to the place's content array.
-    place.comment.push(comment.id)
+    place.comments.push(comment.id)
 
     //Save the place now that it has comment 
     await place.save()
