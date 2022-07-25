@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     .then(place => {
         db.Comment.create(req.body)
         .then(comment => {
-            place.comment.push(comment.id)
+            place.comments.push(comment.id)
             place.save()
             .then(() => {
                 res.redirect(`/places/${req.params.id}`)
