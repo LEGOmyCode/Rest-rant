@@ -13,7 +13,7 @@ function show(data){
             Not yet rated
         </h3>
     )
-    if(data.place.comment.length){
+    if(data.place.comments.length){
         let sumRatings = data.place.comments.reduce((tot, c) =>{
             return tot + c.stars
         },0)
