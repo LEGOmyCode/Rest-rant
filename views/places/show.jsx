@@ -39,6 +39,35 @@ function show(data){
                 <h2>Currently Unrated</h2>
                 <h2>Comments</h2>
                 {comments}
+                <form method="POST" action={`/places/${data.id}/comment?_method=POST`}>
+                    <label htmlFor="author">Author</label>
+                    <input 
+                        type="text"
+                        name="author"
+                        id="author"/>
+                    <label htmlFor="content">Content</label>
+                    <textarea 
+                        name="content"
+                        id="content"
+                    />
+                    <label htmlFor="stars">Star Rating</label>
+                    <input 
+                        type="number"
+                        name="stars"
+                        id="stars"
+                        min="1"
+                        max="5"
+                    />
+                    <label htmlFor="rant">Rant</label>
+                    <input 
+                        type="checkbox"
+                        name="rant"
+                        id="rant"
+                        value="rant"
+                    />
+                    <br/>
+                    <input type="submit"/>
+                </form>
                 <a href={`/places/${data.id}/edit`} className="btn btn-warning">
                     Edit
                 </a>
