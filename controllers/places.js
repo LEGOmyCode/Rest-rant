@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const db = require('../models')
+const { trusted } = require('mongoose')
 
 router.get('/', (req, res) => {
     db.Place.find()
@@ -13,7 +14,7 @@ router.get('/', (req, res) => {
 })
 
   router.post('/:id/comment', (req, res) => {
-    console.log(req.body)
+    console.log(req.params.id)
     db.Place.findById(req.params.id)
     .then(place => {
         db.Comment.create(req.body)
@@ -63,9 +64,9 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
-    .populate('comment')
-    .then(place => {
-        console.log(place.comment)
+    .populate("comments")
+    .then((place) => {
+        console.log(place.comments)
         res.render('places/show', {place})
     })
     .catch(err => {
